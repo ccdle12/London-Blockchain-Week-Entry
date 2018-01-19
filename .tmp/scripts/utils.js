@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  * Test function to see if it can be called by main.js
