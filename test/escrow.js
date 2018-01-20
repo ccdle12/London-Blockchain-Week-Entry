@@ -41,6 +41,10 @@ contract('Escrow', function(accounts) {
     var villager1 = accounts[2];
     var doctor = accounts[3];
 
+
+    //Doctors starting balance
+    var doctorStartingBalance = web3.fromWei(web3.eth.getBalance(doctor), 'ether');
+
     return Escrow.deployed().then(function(instance) {
       contract = instance;
       var amount = web3.toWei(1);
@@ -51,7 +55,7 @@ contract('Escrow', function(accounts) {
     }).then(function(result) {
       assert.equal(web3.fromWei(result.toNumber()), 2, "Total funds raised should be 5");
 
-      return contract.registerDoctor({from: doctor});
+      return contract.registerDoctor(doctor, "Dr.Moresby", 100);
     }).then(function(result) {
       return contract.retrieveDoctor.call();
     }).then(function(result) {
@@ -59,9 +63,25 @@ contract('Escrow', function(accounts) {
     }).then(function(result) {
       return contract.confirmTreatment({from: villager1});
     }).then(function(result) {
-      
-    })
+      return contract.checkAvailableReleasedFunds.call({from: doctor});
+    }).then(function(result) {
+      assert.equal(web3.fromWei(result.toNumber()), web3.fromWei(1), "Released funds should be 1");
+    }).then(function(result) {
+      return contract.withdrawFunds({from: doctor});
+    }).then(function(result) {
+      return contract.checkAvailableReleasedFunds.call({from: doctor});
+    }).then(function(result) {
+      assert.equal(web3.fromWei(result.toNumber()), web3.fromWei(0), "Released funds should be 0");
 
+      return web3.fromWei(web3.eth.getBalance(doctor), 'ether');
+    }).then(function(result) {
+       assert.equal(result.toNumber().toPrecision(1), doctorStartingBalance.toNumber().toPrecision(1), "Doctors starting balance should increase by 1, getting back to the original");
+
+       return contract.getIdentityOfDoctor();
+    }).then(function(result) {
+      assert.equal(result[0], "Dr.Moresby", "Doctors name should be retrieved");
+    })
+ 
   });
 
   // it("should assert true", function(done) {

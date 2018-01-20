@@ -1,26 +1,28 @@
 
 /**
- * Test function to see if it can be called by main.js
- */
-function callMe() {
-  console.log("I am being called from utils.js");
-};
-
-/**
  * Function to update the UI
  */
 function updateUI(docElementId, html, errored) {
-  document.getElementById(docElementId).innerHTML = html;
+    document.getElementById(docElementId).innerHTML = html;
 
-  if (errored) document.getElementById(docElementId).classList = 'not ready';else document.getElementById(docElementId).classList = 'ready';
+    if (errored) document.getElementById(docElementId).classList = 'not ready';else document.getElementById(docElementId).classList = 'ready';
 };
 
 /**
  * Functions that respond to UI activity
  */
 function viewSetMessageInContract() {
-  var message = document.getElementById('input_text').value;
+    var message = document.getElementById('input_text').value;
 
-  setMessageInContract(message);
+    setMessageInContract(message);
+};
+
+/**
+ * Functions that respond to UI activity
+ */
+function donateFundsView() {
+    var donateInput = document.getElementById('donate_input').value;
+
+    donteFundsBackend(donateInput);
 };
 //# sourceMappingURL=utils.js.map

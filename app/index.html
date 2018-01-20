@@ -25,18 +25,49 @@
     <![endif]-->
     
     <div class="hero-unit">
-      <h1>Hello World</h1>
-      <p>You now have</p>
+      <!-- <h1>Hello World</h1>
+      <p>You now have</p> 
       <ul>
         <li>HTML5 Boilerplate</li>
-      </ul>
-
+      </ul> -->
+      <div><h4></h>Block Chain Connection Status</h4></div>
       <div id="connect_status"> Not Connected</div>
-      <div id="message_set">No Message In Contract</div>
-      <div id="last_address">No one has sent a message yet</div>
-      <div>Enter input text to write to deployed contract:</div>
-      <div><input type="text" id="input_text"></div>
-      <div><button onclick="viewSetMessageInContract()">Write Message</button></div>
+      <!-- <div id="message_set">No Message In Contract</div> -->
+      <!-- <div id="last_address">No one has sent a message yet</div> -->
+      <!-- <div>Enter input text to write to deployed contract:</div> -->
+      <!-- <div><input type="text" id="input_text"></div> -->
+      <!-- <div><button onclick="viewSetMessageInContract()">Write Message</button></div> -->
+      <div><h4>Total Funds Raised:</h4></div>
+      <div id="total_funds">Can't access the blockchain</div>
+
+      <div><h4>Doctors Identity:</h4></div>
+      <span>Doctors Name:<div id="doctor_identity_name">Can't access the blockchain</div></span>
+      <span>ID: </span><div id="doctor_identity_id">Can't access the blockchain</div></span>
+      <span>ID BOX: </span><div id="doctor_identity_id_box">Can't access the blockchain</div></span>
+      <div><button onclick="viewRegisterDoctor()">Doctor Register</button></div>
+
+      <div><h4>Doctors Available Funds:</h4></div>
+      <div id="doctor_available_funds">Can't access the blockchain</div>
+      <!-- <div><button onclick="viewWithdrawDoctor()">Doctor Withdraw</button></div> -->
+      <div><button>Doctor Withdraw</button></div>
+
+      <div><h4>Donate:</h4></div>
+      <div><input type="text" id="donate_input"></div>
+      <div><button onclick="donateFundsView()">Send Funds</button></div>
+
+
+      <div><h4>Villager Identity:</h4></div>
+      <span>Villagers Name:<div id="villager_identity_name">Can't access the blockchain</div></span>
+      <span>ID: </span><div id="villager_identity_id">Can't access the blockchain</div></span>
+      <span>Gender: </span><div id="villager_identity_gender">Can't access the blockchain</div></span>
+      <span>DOB: <div id="villager_identity_DOB">Can't access the blockchain</div></span>
+      <span>Confirmation of Treatment: <div id="villager_confirmation_of_treatment"> Can't access the blockchain</div></span>
+      <span>Time of Treatment: <div id="villager_time_of_treatment"> Can't access the blockchain</div></span>
+      <div><button onclick="viewRegisterVillager()">Villager Register</button></div>
+      <div><button onclick="confirmTreatment()">Confirm Treatment</button></div>
+
+      
+
     </div>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,13 +1,5 @@
 
 /**
- * Test function to see if it can be called by main.js
- */
-function callMe() {
-    console.log("I am being called from utils.js");
-};
-
-
-/**
  * Function to update the UI
  */
 function updateUI(docElementId, html, errored) {
@@ -25,4 +17,13 @@ function viewSetMessageInContract() {
     var message = document.getElementById('input_text').value;
 
     setMessageInContract(message);
+};
+
+/**
+ * Functions that respond to UI activity
+ */
+function donateFundsView() {
+    var donateInput = document.getElementById('donate_input').value;
+
+    donteFundsBackend(donateInput);
 };
