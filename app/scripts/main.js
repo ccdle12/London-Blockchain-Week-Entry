@@ -4,7 +4,7 @@
  */
 var contract_abidefinition = [{ "constant": false, "inputs": [ { "name": "passedMessage", "type": "string" } ], "name": "setMessage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getMessage", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getLastSentAddress", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "name": "initMessage", "type": "string" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [], "name": "MessageWritten", "type": "event" }];
 
-var contract_address = '0x7ffffbd83439dc69c60cf4e9b6044b3400d19274';
+var contract_address = '0xaa74b05fef5f2ee04bb1401a3e05ad4ecf5e2a6c';
 var contract;
 
 
